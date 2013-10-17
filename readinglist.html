@@ -27,6 +27,23 @@
 
             <div class = "books">
             </div>
+
+            <div class = "form" id = "addBook">
+
+                    <legend>Add Book</legend>
+                    <label>Title</label>
+                    <input type="text" placeholder="Book title..." id = "bookTitle">
+                    <label>Genre</label>
+                    <input type="text" placeholder="Genre..." id = "genre">
+                    <label>Author</label>
+                    <input type="text" placeholder="Author..." id = "author">
+                    <label>Book Cover URL</label>
+                    <input type="text" placeholder="Image URL..." id = "bookURL">
+                    <br>
+                    <button class="btn" id="addBookButton">Submit
+                    </button>
+
+            </div>
         
         </div>
 
@@ -91,21 +108,36 @@
         var pageNode = document.getElementsByClassName('books')[0];
         var newUList = document.createElement('ul');
 
-        for (i = 0; i < listOfBooks.length; i++) {
+        function addBook (bookToAdd) {
             var newListItem = document.createElement('li');
             var newBookPhoto = document.createElement('img')
-            var bookTitle = document.createTextNode(listOfBooks[i].booktitle + ", " + listOfBooks[i].author);
-            if (listOfBooks[i].read == true) {
-                newListItem.style.color = 'red';
-            }
-            newBookPhoto.src = listOfBooks[i].bookURL;
+            var bookTitle = document.createTextNode(bookToAdd.booktitle + ", " + bookToAdd.author);
+            newBookPhoto.src = bookToAdd.bookURL;
             newListItem.appendChild(bookTitle);
             newListItem.appendChild(document.createElement('br'));
             newListItem.appendChild(newBookPhoto);
             newUList.appendChild(newListItem);
         }
 
+        for (i = 0; i < listOfBooks.length; i++) {
+            addBook(listOfBooks[i]);
+        }
+
         pageNode.appendChild(newUList);
+
+        var button = document.getElementById('addBookButton');
+        function onClick(event) {
+            var bookToAdd = new Book(document.getElementById("bookTitle").value,document.getElementById("genre").value,
+                document.getElementById("author").value,
+                false,
+                document.getElementById("bookURL").value
+            );
+            addBook(bookToAdd);
+            
+        }
+
+        addBookButton.addEventListener('click', onClick)
+
     </script>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>    
