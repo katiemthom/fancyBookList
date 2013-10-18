@@ -1,47 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">  
-    <head> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">   
-        <meta http-equiv="Content-Script-Type" content="text/javascript">  
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    </head>  
-    <body>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <a class="brand" href="#">fancyBookList</a>
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Add a Book</a></li>
-              <li><a href="readinglist.html">Book List</a></li>
-            </ul>
-          </div>
-        </div>
 
-        
+{% extends "main.html" %}
+{% block content %}
+<div class="page-header">
+    <h1>My fancyBookList <small>This is where all the fancy books go.</small></h1>
+</div>
 
-        <div class = "container">
+<div class = "books">
+</div>
 
 
-            <div class="hero-unit">
-              <h1>fancyBookList</h1>
-              <p>Booklist for Fancy People</p>
-              <p>
-                <a href="readinglist.html" class="btn btn-primary btn-large">
-                  Get Started!
-                </a>
-              </p>
-            </div>
-
-            <div class = "books">
-            </div>
-        
-        </div>
-
-
-
-    </body>
-    // <script type="text/javascript">    
+{% endblock %}
+    <!-- <script type="text/javascript">    
     //     var Booklist = function(numRead, numUnread, nextBook,currentBook,lastBook,allBooks) {
     //         this.numRead = numRead;
     //         this.numUnread = numUnread;
@@ -99,25 +68,37 @@
     //     var pageNode = document.getElementsByClassName('books')[0];
     //     var newUList = document.createElement('ul');
 
-    //     for (i = 0; i < listOfBooks.length; i++) {
+    //     function addBook (bookToAdd) {
     //         var newListItem = document.createElement('li');
     //         var newBookPhoto = document.createElement('img')
-    //         var bookTitle = document.createTextNode(listOfBooks[i].booktitle + ", " + listOfBooks[i].author);
-    //         if (listOfBooks[i].read == true) {
-    //             newListItem.style.color = 'red';
-    //         }
-    //         newBookPhoto.src = listOfBooks[i].bookURL;
+    //         var bookTitle = document.createTextNode(bookToAdd.booktitle + ", " + bookToAdd.author);
+    //         newBookPhoto.src = bookToAdd.bookURL;
     //         newListItem.appendChild(bookTitle);
     //         newListItem.appendChild(document.createElement('br'));
     //         newListItem.appendChild(newBookPhoto);
     //         newUList.appendChild(newListItem);
     //     }
 
-    //     pageNode.appendChild(newUList);
-    // </script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>    
-</html>
+    //     for (i = 0; i < listOfBooks.length; i++) {
+    //         addBook(listOfBooks[i]);
+    //     }
 
+    //     pageNode.appendChild(newUList);
+
+    //     var button = document.getElementById('addBookButton');
+    //     function onClick(event) {
+    //         var bookToAdd = new Book(document.getElementById("bookTitle").value,document.getElementById("genre").value,
+    //             document.getElementById("author").value,
+    //             false,
+    //             document.getElementById("bookURL").value
+    //         );
+    //         addBook(bookToAdd);
+            
+    //     }
+
+    //     addBookButton.addEventListener('click', onClick)
+
+    // </script>
+-->
 
 

@@ -1,0 +1,25 @@
+
+{% extends "main.html" %}
+{% block content %}
+<div class="page-header">
+    <h1>Add a fancyBook <small>This is where the fancy happens.</small></h1>
+</div>
+
+
+<div class = "form" id = "addBook">
+
+        <legend>Add Book</legend>
+        <label>Title</label>
+        <input type="text" placeholder="Book title..." id = "bookTitle">
+        <label>Genre</label>
+        <input type="text" placeholder="Genre..." id = "genre">
+        <label>Author</label>
+        <input type="text" placeholder="Author..." id = "author">
+        <label>Book Cover URL</label>
+        <input type="text" placeholder="Image URL..." id = "bookURL">
+        <br>
+        <button class="btn" id="addBookButton">Submit
+        </button>
+
+</div>
+{% endblock %}
